@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import {
   Phone, Star, Shield, Award, ThumbsUp, CheckCircle2, ChevronRight,
-  Home, Layers, Square, CloudLightning, Wind, ArrowRight, Quote,
+  Home as HomeIcon, Layers, Square, CloudLightning, Wind, ArrowRight, Quote,
   DollarSign, FileCheck, Clock, MapPin,
 } from "lucide-react";
 import heroImg from "@/assets/hero-roof.jpg";
@@ -28,10 +28,10 @@ export const Route = createFileRoute("/")({
       { property: "og:description", content: "5,000+ roofs replaced across Dallas–Fort Worth. Lifetime warranty. Insurance claim specialists." },
     ],
   }),
-  component: Home,
+  component: HomePage,
 });
 
-const iconMap = { Home, Shield, Layers, Square, CloudLightning, Wind } as const;
+const iconMap = { Home: HomeIcon, Shield, Layers, Square, CloudLightning, Wind } as const;
 
 function Section({ children, className = "" }: { children: React.ReactNode; className?: string }) {
   return <section className={`py-20 md:py-28 ${className}`}>{children}</section>;
@@ -517,4 +517,4 @@ function BeforeAfterSlider() {
   );
 }
 
-const Home = HomePage;
+
