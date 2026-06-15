@@ -82,10 +82,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: "Apex Roofing & Restoration | #1 Texas Roofers · Free Inspection" },
       { name: "description", content: "Texas's most-trusted roofing contractor. 5,000+ roofs replaced. GAF Master Elite®, lifetime warranty, insurance claim experts. Free same-day inspection." },
       { name: "author", content: "Apex Roofing & Restoration" },
-      { property: "og:title", content: "Apex Roofing & Restoration | Free Inspection in 30 Minutes" },
-      { property: "og:description", content: "5,000+ roofs replaced. Lifetime warranty. 0% financing. 24/7 storm response across Dallas–Fort Worth." },
+      { property: "og:title", content: "Apex Roofing & Restoration | #1 Texas Roofers · Free Inspection" },
+      { property: "og:description", content: "Texas's most-trusted roofing contractor. 5,000+ roofs replaced. GAF Master Elite®, lifetime warranty, insurance claim experts. Free same-day inspection." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Apex Roofing & Restoration | #1 Texas Roofers · Free Inspection" },
+      { name: "twitter:description", content: "Texas's most-trusted roofing contractor. 5,000+ roofs replaced. GAF Master Elite®, lifetime warranty, insurance claim experts. Free same-day inspection." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/31a57fc9-e6c2-4043-9887-8893a03f2f39/id-preview-071fcc29--847b3ab1-d2f4-405a-bdcc-3a2a27f3927d.lovable.app-1781526352869.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/31a57fc9-e6c2-4043-9887-8893a03f2f39/id-preview-071fcc29--847b3ab1-d2f4-405a-bdcc-3a2a27f3927d.lovable.app-1781526352869.png" },
     ],
     links: [
       {
