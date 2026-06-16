@@ -7,6 +7,7 @@ import {
   DollarSign, FileCheck, Clock, MapPin,
 } from "lucide-react";
 import heroImg from "@/assets/hero-roof.jpg";
+import heroVideo from "@/assets/hero-roofing.mp4.asset.json";
 import beforeImg from "@/assets/before-1.jpg";
 import afterImg from "@/assets/after-1.jpg";
 import project1 from "@/assets/project-1.jpg";
