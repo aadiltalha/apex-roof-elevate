@@ -63,16 +63,42 @@ function HomePage() {
             playsInline
             preload="metadata"
             poster={heroImg}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover animate-ken-burns"
             aria-hidden="true"
           >
-            <source
-              src="https://videos.pexels.com/video-files/8127817/8127817-uhd_2560_1440_24fps.mp4"
-              type="video/mp4"
-            />
+            <source src={heroVideo.url} type="video/mp4" />
           </video>
           <div className="absolute inset-0" style={{ background: "var(--gradient-hero)" }} />
           <div className="absolute inset-0 bg-[var(--navy-deep)]/40" />
+          {/* Light sweep overlay */}
+          <div className="absolute inset-0 light-sweep-overlay" />
+          {/* Floating particles */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            {[
+              { left: "10%", top: "20%", delay: "0s", size: 3 },
+              { left: "25%", top: "60%", delay: "1.5s", size: 2 },
+              { left: "40%", top: "15%", delay: "3s", size: 4 },
+              { left: "55%", top: "70%", delay: "0.8s", size: 2 },
+              { left: "70%", top: "30%", delay: "2.2s", size: 3 },
+              { left: "85%", top: "55%", delay: "4s", size: 2 },
+              { left: "15%", top: "80%", delay: "3.5s", size: 3 },
+              { left: "60%", top: "10%", delay: "1s", size: 2 },
+              { left: "90%", top: "25%", delay: "5s", size: 3 },
+              { left: "5%", top: "45%", delay: "2.8s", size: 2 },
+            ].map((p, i) => (
+              <span
+                key={i}
+                className="hero-particle"
+                style={{
+                  left: p.left,
+                  top: p.top,
+                  animationDelay: p.delay,
+                  width: p.size,
+                  height: p.size,
+                }}
+              />
+            ))}
+          </div>
         </div>
 
         <div className="container mx-auto max-w-7xl px-6 pt-16 pb-24 grid lg:grid-cols-12 gap-10 items-center">
