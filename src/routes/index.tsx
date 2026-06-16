@@ -27,6 +27,9 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "Apex Roofing & Restoration | Free Inspection" },
       { property: "og:description", content: "5,000+ roofs replaced across Dallas–Fort Worth. Lifetime warranty. Insurance claim specialists." },
     ],
+    links: [
+      { rel: "preload", as: "image", href: heroImg, fetchpriority: "high" } as never,
+    ],
   }),
   component: HomePage,
 });
@@ -52,14 +55,23 @@ function HomePage() {
       {/* HERO */}
       <section className="relative min-h-[92vh] flex items-center overflow-hidden text-white">
         <div className="absolute inset-0 -z-10">
-          <img
-            src={heroImg}
-            alt="Apex roofing crew installing premium architectural shingles at sunset"
-            className="w-full h-full object-cover animate-slow-zoom"
-            width={1920}
-            height={1080}
-          />
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            poster={heroImg}
+            className="w-full h-full object-cover"
+            aria-hidden="true"
+          >
+            <source
+              src="https://videos.pexels.com/video-files/8127817/8127817-uhd_2560_1440_24fps.mp4"
+              type="video/mp4"
+            />
+          </video>
           <div className="absolute inset-0" style={{ background: "var(--gradient-hero)" }} />
+          <div className="absolute inset-0 bg-[var(--navy-deep)]/40" />
         </div>
 
         <div className="container mx-auto max-w-7xl px-6 pt-16 pb-24 grid lg:grid-cols-12 gap-10 items-center">

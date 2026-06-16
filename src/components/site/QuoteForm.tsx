@@ -2,6 +2,7 @@ import { useState } from "react";
 import { z } from "zod";
 import { toast } from "sonner";
 import { Send, Loader2 } from "lucide-react";
+import { useNavigate } from "@tanstack/react-router";
 
 const schema = z.object({
   name: z.string().trim().min(2, "Name required").max(80),
@@ -14,6 +15,7 @@ const schema = z.object({
 
 export function QuoteForm({ compact = false }: { compact?: boolean }) {
   const [submitting, setSubmitting] = useState(false);
+  const navigate = useNavigate();
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -24,10 +26,10 @@ export function QuoteForm({ compact = false }: { compact?: boolean }) {
       return;
     }
     setSubmitting(true);
-    await new Promise((r) => setTimeout(r, 900));
-    setSubmitting(false);
-    toast.success("Quote request received! We'll call you within 30 minutes.");
+    await new Promise((r) => setTimeout(r, 600));
     (e.target as HTMLFormElement).reset();
+    toast.success("Quote request received!");
+    navigate({ to: "/thank-you" });
   }
 
   return (
